@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/main.css">
-    <title>main</title>
+    <link rel="stylesheet" href="css/apply-menti.css">
+    <title>멘티로 지원하기</title>
 </head>
-
 <body>
-    <div class="search-container">
-        <form>
-            <input type="text" name="query" placeholder="무엇이 필요하시나요?" class="search">
-        </form>
-        <button class="search-btn"><img src="icons/search_btn.png"></button>
-    </div>
 
-    <div class="apply-container">
-        <a href="apply-menti.html"><img src="images/applybtn1.png"></a>
-        <a href="#"><img src="images/applybtn2.png"></a>
-    </div>
+    <div class="menti-container">
+        <h2 class="text-h2">멘티 지원하기</h2>
+        <div class="text-container">
+            이름: <input type="text" class="text1"><br/>
+            학년: 
+            <select class="text2">
+                <option>---</option>
+                <option>1학년</option>
+                <option>2학년</option>
+                <option>3학년</option>
+            </select><br/>
+            학교: <input type="text" class="text1"><br/>
+            지원동기: <input type="text" class="text3" placeholder="100자이내로작성해주세요"><br/>
+            포트폴리오 링크(최대3개):<br/>
+            ① <input type="text" class="text1"><br/>
+            ② <input type="text" class="text1"><br/>
+            ③ <input type="text" class="text1"><br/>
+        </div>
 
-    <div class="menu-container">
-        <div>
-            <h2 class="menu-title">미니멘토란?</h2>
-            <a href="#"><img src="images/menu_btn1.png" class="menu-img"></a>
-        </div>
-        <div>
-            <h2 class="menu-title">Q&A</h2>
-            <a href="#"><img src="images/menu_btn2.png" class="menu-img"></a>
-        </div>
+        <button type="submit" class="apply-btn">지원하기</button>
     </div>
 
     <div class="nav-container">
@@ -62,7 +60,5 @@
             </li>
         </ul>
     </div>
-
 </body>
-
 </html>
