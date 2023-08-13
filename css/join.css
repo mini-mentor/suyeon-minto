@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: white;
+    margin-top: 50px;
+}
+
+.text {
+    font-family: 'Pretendard-Regular';
+    font-size: 20px;
+    line-height: 40px;
+    margin-left: 20px;
+}
+
+
+.textbox{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tb {
+    margin-bottom: 20px;
+    height: 45px;
+    border-color: #E2E2E2;
+    border-radius: 5px;
+}
+
+.btn{
+    font-family: 'Pretendard-Regular';
+    border: 0;
+    height: 50px;
+    width: 90px;
+    border-radius: 8px;
+    background-color: #FAFAFB;
+}
+
+.gender{
+    font-family: 'Pretendard-Regular';
+    border: 0.5;
+    height: 50px;
+    width: 165px;
+    border-radius: 8px;
+    background-color: white;
+    border-color: #FAFAFB;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.bt{
+    border: 0;
+    background-color: transparent;
+
+}
+
+.btimg2{
+    margin-top: 300px !important;
+    margin: auto;
+}
+
+/*tablet: 541~720px*/
+@media screen and (min-width:541px) {
+    body {
+        background-color: white;
+    }
+}
+
+
+/*desktop: 721px~*/
+@media screen and (min-width:721px) {
+    body {
+        background-color: white;
+    }
+}

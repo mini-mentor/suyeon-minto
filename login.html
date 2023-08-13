@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/login.css">
+
+    <title>로그인</title>
+</head>
+
+<body>
+    <div class="image-container">
+        <img src="images/img1.png" class="img1">
+    </div>
+
+    <div class="texts">
+        <div class="texts1">
+            <h2 class="text1">현업 개발자 선배들의</h2>
+            <h2 class="text1">실무 중심 개발 멘토링, 미니멘토</h2>
+        </div>
+        <div class="texts2">
+            <p>가입하면 멘토링 신청, 결과 확인 등의
+            <p>
+            <p>여러 기능을 이용할 수 있어요!</p>
+        </div>
+    </div>
+
+    <div class="image-container">
+        <button class="bt" onclick="moveKakaoLogin()"><img src="images/sns_bt.png" class="btimg1"></button>
+    </div>
+
+    <!--카카오 SDK-->
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+        const REST_API_KEY = "d2b7a4c136d454a2bc445aa50f1337c0"
+        const kakaoLoginUrl = "https://kauth.kakao.com/oauth/authorize";
+        const kakaoTokenApiUrl = "https://kauth.kakao.com/oauth/token";
+        const redirectUrl = "http://localhost:3000";
+
+        // 1. 카카오 로그인 창으로 이동
+        function moveKakaoLogin() {
+            location.href = `${kakaoLoginUrl}?client_id=${REST_API_KEY}&redirect_uri=${redirectUrl}&response_type=code`;
+        }
+
+        // 2. 토큰 받기
+        // 3-3. redirect_url로 이동한 후 url 뒤에 code 값 붙어옴 
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get("code");
+        if (code) {
+            const accessToken = getKakaoToken(code);
+            console.log(accessToken); 
+        }
+
+        // 3-4. 이동된 redirect_url 에서 전달받은 코드 값을 파라미터로 카카오 토큰 요청 API 호출
+        function getKakaoToken(code) {
+            let token = "";
+            let data = {
+                "grant_type": "authorization_code",
+                "client_id": REST_API_KEY,
+                "redirect_uri": redirectUrl,
+                "code": code,
+            };
+
+            $.ajax(kakaoTokenApiUrl, {
+                data: data,
+                dataType: "json",
+                method: "POST",
+                async: false,
+                success: function (resultData) {
+                    token = resultData.access_token;
+                }
+            });
+
+            return token;
+        }
+
+    </script>
+</body>
+
+</html>
