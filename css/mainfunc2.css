@@ -1,0 +1,34 @@
+.img-container{
+    display: flex;
+    justify-content: center;
+}
+
+.qna-icon{
+    margin-top: 150px;
+    height: 150px;
+}
+
+.qna-container{
+    margin: 20px;
+}
+
+hr{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.d-inline-flex{
+    display: flex;
+    justify-content: center;
+}
+
+#go-btn{
+    width: 250px;
+}
+
+@media (max-width: 376px){
+    .qna-icon{
+        margin-top: 50px;
+        height: 100px;
+    }
+}
